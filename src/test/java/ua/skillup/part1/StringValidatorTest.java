@@ -147,5 +147,32 @@ public class StringValidatorTest {
                 {"qrqwr<a href=\"http://www.google.com\">Extra symbols</a>"},
         };
     }
+
+    @Test(dataProvider = "invalidLinks")
+    public void testInvalidHTMLLink(String link) {
+        assertFalse(StringValidator.isValidHTMLLink(link));
+    }
+
+    @Test
+    public void testValidPassword() {
+        assertTrue(StringValidator.isValidPassword("Qwerty_123"));
+    }
+
+    @DataProvider(name = "invalidPasswords")
+    public Object[][] invalidPasswords() {
+        return new Object[][]{
+                {"Qwerty"},
+                {"Qwerty_"},
+                {"Qwerty123"},
+                {"qwerty_123"},
+                {"QWERTY_123"},
+                {"Qw_2"}
+        };
+    }
+
+    @Test(dataProvider = "invalidPasswords")
+    public void testInvalidPassword(String password) {
+        assertFalse(StringValidator.isValidPassword(password));
+    }
 }
 
