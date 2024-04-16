@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-public class StringValidatorTest {
+public class StringValidatorTests {
     @Test
     public void testValidBinaryNumber() {
         assertTrue(StringValidator.isValidBinaryNumber("1010101010"));
