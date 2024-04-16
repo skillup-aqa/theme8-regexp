@@ -1,7 +1,18 @@
 package ua.skillup.part2;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class WordCounter {
     public static int countWords(String text) {
-        return 0;
+        Pattern wordPattern = Pattern.compile("\\w+");
+        Matcher matcher = wordPattern.matcher(text);
+
+        int count = 0;
+        while (matcher.find()) {
+            count++;
+        }
+
+        return count;
     }
 }
