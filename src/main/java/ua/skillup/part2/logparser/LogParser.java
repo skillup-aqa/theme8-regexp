@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class LogParser {
     private final LogEntry[] logEntries;
 
-    private LogParser (LogEntry[] logEntries) {
+    private LogParser(LogEntry[] logEntries) {
         this.logEntries = logEntries;
     }
 

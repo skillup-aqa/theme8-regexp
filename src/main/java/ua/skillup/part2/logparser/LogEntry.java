@@ -1,6 +1,7 @@
 package ua.skillup.part2.logparser;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class LogEntry {
     private final LocalDateTime dateTime;
@@ -41,5 +42,22 @@ public class LogEntry {
     @Override
     public String toString() {
         return String.format("[%s] [%s] [%s %s] %s", dateTime.toString(), level, clientName, clientIp, message);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LogEntry logEntry = (LogEntry) o;
+        return Objects.equals(dateTime, logEntry.dateTime)
+                && level == logEntry.level
+                && Objects.equals(clientName, logEntry.clientName)
+                && Objects.equals(clientIp, logEntry.clientIp)
+                && Objects.equals(message, logEntry.message);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dateTime, level, clientName, clientIp, message);
     }
 }

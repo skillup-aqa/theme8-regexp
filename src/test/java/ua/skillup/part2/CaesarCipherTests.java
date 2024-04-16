@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 public class CaesarCipherTests {
     final String LINE_WITH_ALL_LETTERS = "farmer jack realized that big yellow quilts were expensive";
     final int SHIFT = 3;
-    final String ENCRYPTED_BY_3 = "idupdq mdfn uhdolwdg wkdw elj brjor zxlqwv zduh ehvwulqhv";
+    final String ENCRYPTED_BY_3 = "iduphu mdfn uhdolchg wkdw elj bhoorz txlowv zhuh hashqvlyh";
 
     @Test
     public void testEncrypt() {
@@ -17,7 +17,7 @@ public class CaesarCipherTests {
     @Test
     public void testDecrypt() {
         assertEquals(CaesarCipher.decrypt(ENCRYPTED_BY_3, 3),
-                     LINE_WITH_ALL_LETTERS);
+                LINE_WITH_ALL_LETTERS);
     }
 
     @Test

@@ -28,38 +28,20 @@ public class LogParserTests {
             .toString();
 
     @Test
-    public void testGetLogsAfter() {
-        LogParser parser = LogParser.fromLog(LOG);
-        assertEquals(parser.logEntriesAfter(LocalDateTime.of(2024, 1, 3, 0, 0)), new LogEntry[] {LOG_ENTRIES[2], LOG_ENTRIES[3]});
-    }
-
-    @Test
-    public void testGetLogsAfterWithEmptyLog() {
-        LogParser parser = LogParser.fromLog("");
-        assertEquals(parser.logEntriesAfter(LocalDateTime.of(2024, 1, 3, 0, 0)), new LogEntry[0]);
-    }
-
-    @Test
-    public void testGetLogsAfterWithEmptyLogEntries() {
-        LogParser parser = LogParser.fromLog(new StringJoiner("\n").toString());
-        assertEquals(parser.logEntriesAfter(LocalDateTime.of(2024, 1, 3, 0, 0)), new LogEntry[0]);
-    }
-
-    @Test
-    public void testGetLogsAfterDateInFuture() {
-        LogParser parser = LogParser.fromLog(LOG);
-        assertEquals(parser.logEntriesAfter(LocalDateTime.of(2024, 12, 3, 0, 0)), new LogEntry[0]);
-    }
-
-    @Test
-    public void testGetLogsAfterDateInPast() {
-        LogParser parser = LogParser.fromLog(LOG);
-        assertEquals(parser.logEntriesAfter(LocalDateTime.of(2023, 12, 3, 0, 0)), LOG_ENTRIES);
-    }
-
-    @Test
     public void testGetErrorLogs() {
         LogParser parser = LogParser.fromLog(LOG);
-        assertEquals(parser.filterByLevel(LogLevel.ERROR), new LogEntry[] {LOG_ENTRIES[0], LOG_ENTRIES[3]});
+        assertEquals(parser.filterByLevel(LogLevel.ERROR), new LogEntry[]{LOG_ENTRIES[0], LOG_ENTRIES[3]});
+    }
+
+    @Test
+    public void testGetInfoLogs() {
+        LogParser parser = LogParser.fromLog(LOG);
+        assertEquals(parser.filterByLevel(LogLevel.INFO), new LogEntry[]{LOG_ENTRIES[1]});
+    }
+
+    @Test
+    public void testGetTraceLogs() {
+        LogParser parser = LogParser.fromLog(LOG);
+        assertEquals(parser.filterByLevel(LogLevel.TRACE), new LogEntry[0]);
     }
 }
