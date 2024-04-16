@@ -17,7 +17,7 @@ public class CaesarCipherTests {
     @Test
     public void testDecrypt() {
         assertEquals(CaesarCipher.decrypt(ENCRYPTED_BY_3, 3),
-                     LINE_WITH_ALL_LETTERS);
+                LINE_WITH_ALL_LETTERS);
     }
 
     @Test

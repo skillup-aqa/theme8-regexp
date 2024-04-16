@@ -30,13 +30,13 @@ public class LogParserTests {
     @Test
     public void testGetErrorLogs() {
         LogParser parser = LogParser.fromLog(LOG);
-        assertEquals(parser.filterByLevel(LogLevel.ERROR), new LogEntry[] {LOG_ENTRIES[0], LOG_ENTRIES[3]});
+        assertEquals(parser.filterByLevel(LogLevel.ERROR), new LogEntry[]{LOG_ENTRIES[0], LOG_ENTRIES[3]});
     }
 
     @Test
     public void testGetInfoLogs() {
         LogParser parser = LogParser.fromLog(LOG);
-        assertEquals(parser.filterByLevel(LogLevel.INFO), new LogEntry[] {LOG_ENTRIES[1]});
+        assertEquals(parser.filterByLevel(LogLevel.INFO), new LogEntry[]{LOG_ENTRIES[1]});
     }
 
     @Test

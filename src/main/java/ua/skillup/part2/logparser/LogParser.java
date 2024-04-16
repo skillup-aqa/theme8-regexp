@@ -1,13 +1,12 @@
 package ua.skillup.part2.logparser;
 
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.util.regex.Pattern;
 
 public class LogParser {
     private final LogEntry[] logEntries;
 
-    private LogParser (LogEntry[] logEntries) {
+    private LogParser(LogEntry[] logEntries) {
         this.logEntries = logEntries;
     }
 
