@@ -12,9 +12,9 @@ public class StringValidator {
     }
 
     public static boolean isValidUkrainianPhoneNumber(String str) {
-
-        return str.replace(" ", "").matches("\\+?38\\(0\\d{2}\\)\\d{7}|\\(0\\d{2}\\)\\d{7}|\\+?380\\d{2}\\d{7}|0\\d{2}\\d{7}");
         //actual regular expression is \+?38\(0\d{2}\)\d{7}|\(0\d{2}\)\d{7}|\+?380\d{2}\d{7}|0\d{2}\d{7}
+        return str.replace(" ", "").matches("\\+?38\\(0\\d{2}\\)\\d{7}|\\(0\\d{2}\\)\\d{7}|\\+?380\\d{2}\\d{7}|0\\d{2}\\d{7}");
+
     }
 
     public static boolean isValidIPv4(String str) {
@@ -27,6 +27,7 @@ public class StringValidator {
     }
 
     public static boolean isValidHTMLLink(String str) {
-        return false;
+        //actual regular expression is <a\shref="(http:\/\/w*\..+">|#">|\/")+.*>
+        return str.matches("<a\\shref=\"(http:\\/\\/w*\\..+\">|#\">|\\/\")+.*>");
     }
 }
