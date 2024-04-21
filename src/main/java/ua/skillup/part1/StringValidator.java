@@ -18,8 +18,8 @@ public class StringValidator {
     }
 
     public static boolean isValidIPv4(String str) {
-
-        return false;
+        //actual regular expression is ^(25[05]\.|1[0-9]?[0-9]?\.|0[0-9]?[0-9]?\.){3}(25[05]|1[0-9]?[0-9]?|0[0-9]?[0-9]?)$
+        return str.matches("^(25[05]\\.|1[0-9]?[0-9]?\\.|0[0-9]?[0-9]?\\.){3}(25[05]|1[0-9]?[0-9]?|0[0-9]?[0-9]?)$");
     }
 
     public static boolean isValidPassword(String str) {
