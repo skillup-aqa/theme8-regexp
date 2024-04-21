@@ -11,8 +11,9 @@ public class LogParser {
     }
 
     public static LogParser fromLog(String log) {
-        //actual regular expression \[(.*?)\] \[(.*?)\] \[(.*?) (.*?)\] (.*)
-        Pattern pattern = Pattern.compile("\\[(.*?)\\] \\[(.*?)\\] \\[(.*?) (.*?)\\] (.*)");
+        //regular expression from keys \[(.*?)\] \[(.*?)\] \[(.*?) (.*?)\] (.*)
+        //changed regular \[(.*)\] \[(.*)\] \[(.*) (.*)\] (.*)
+        Pattern pattern = Pattern.compile("\\[(.*)\\] \\[(.*)\\] \\[(.*) (.*)\\] (.*)");
         String[] lines = log.split("\n");
         LogEntry[] logEntries = new LogEntry[lines.length];
         for (int i = 0; i < lines.length; i++) {
@@ -43,13 +44,25 @@ public class LogParser {
         }
 
         LogEntry[] result = new LogEntry[count];
-        for (int i = 0; i<count; i++) {
+        for (int i = 0; i < count; i++) {
             result[i] = filtered[i];
         }
-            return result;
+        return result;
     }
 
     public LogEntry[] logEntriesAfter(LocalDateTime dateTime) {
-        return null;
+        LogEntry[] filtered = new LogEntry[logEntries.length];
+        int count = 0;
+        for (LogEntry logEntry : logEntries) {
+            if (logEntry.getDateTime().isAfter(dateTime)) {
+                filtered[count++] = logEntry;
+            }
+        }
+
+        LogEntry[] result = new LogEntry[count];
+        for (int i = 0; i < count; i++) {
+            result[i] = filtered[i];
+        }
+        return result;
     }
 }
