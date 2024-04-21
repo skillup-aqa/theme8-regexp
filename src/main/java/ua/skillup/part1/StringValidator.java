@@ -23,7 +23,8 @@ public class StringValidator {
     }
 
     public static boolean isValidPassword(String str) {
-        return false;
+        //actual regular expression is ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[~!@#$%^&*()_+\-=<>?';.,/])[!-~]{8,}$
+        return str.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[~!@#$%^&*()_+\\-=<>?';.,/])[!-~]{8,}$");
     }
 
     public static boolean isValidHTMLLink(String str) {
