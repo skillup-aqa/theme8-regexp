@@ -1,6 +1,11 @@
 package ua.skillup.part2;
 
 import ua.skillup.part1.StringValidator;
+import ua.skillup.part2.logparser.LogEntry;
+import ua.skillup.part2.logparser.LogLevel;
+import ua.skillup.part2.logparser.LogParser;
+
+import java.time.LocalDateTime;
 
 public class CheckPart2Theme8 {
     public static void main(String[] args) {
@@ -13,8 +18,8 @@ public class CheckPart2Theme8 {
         System.out.println(Character.isLowerCase('L') ? 'a' : 'A');
         System.out.println((char) 97);
 
-        System.out.println(CaesarCipher.encrypt("bastion 12", 5));
-        System.out.println(CaesarCipher.decrypt(CaesarCipher.encrypt("bastion 12", 5), 5));
+        System.out.println(CaesarCipher.encrypt("basTion 54 mu", 5));
+        System.out.println(CaesarCipher.decrypt(CaesarCipher.encrypt("bastiON 54 mu", 5), 5));
 
     }
 }
