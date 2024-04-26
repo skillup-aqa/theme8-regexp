@@ -10,11 +10,11 @@ public class StringValidator {
     }
 
     public static boolean isValidUkrainianPhoneNumber(String str) {
-        return false;
+        return str.replace(" ", "").matches("^\\+?(38\\(0\\d{2}\\)|380\\d{2}|0\\d{2})\\d{7}$");
     }
 
     public static boolean isValidIPv4(String str) {
-        return false;
+        return str.matches("^(25[0-5]|2[0-4]\\\\d|1\\\\d{2}|[1-9]?\\\\d)\\\\.(25[0-5]|2[0-4]\\\\d|1\\\\d{2}|[1-9]?\\\\d)\\\\.(25[0-5]|2[0-4]\\\\d|1\\\\d{2}|[1-9]?\\\\d)\\\\.(25[0-5]|2[0-4]\\\\d|1\\\\d{2}|[1-9]?\\\\d)$");
     }
 
     public static boolean isValidPassword(String str) {
