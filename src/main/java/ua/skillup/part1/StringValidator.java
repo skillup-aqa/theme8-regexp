@@ -2,11 +2,11 @@ package ua.skillup.part1;
 
 public class StringValidator {
     public static boolean isValidBinaryNumber(String str) {
-        return false;
+        return str.matches("^[01]+$");
     }
 
     public static boolean isValidHexNumber(String str) {
-        return false;
+        return str.matches("^0x[0-9a-fA-F]+$");
     }
 
     public static boolean isValidUkrainianPhoneNumber(String str) {
