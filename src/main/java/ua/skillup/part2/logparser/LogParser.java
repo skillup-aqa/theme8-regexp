@@ -1,6 +1,7 @@
 package ua.skillup.part2.logparser;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.regex.Pattern;
 
 public class LogParser {
@@ -18,7 +19,8 @@ public class LogParser {
             String line = lines[i];
             var matcher = pattern.matcher(line);
             if (matcher.find()) {
-                LocalDateTime dateTime = LocalDateTime.parse(matcher.group(1));
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss");
+                LocalDateTime dateTime = LocalDateTime.parse(matcher.group(1), formatter);
                 LogLevel level = LogLevel.valueOf(matcher.group(2));
                 String clientName = matcher.group(3);
                 String clientIp = matcher.group(4);
