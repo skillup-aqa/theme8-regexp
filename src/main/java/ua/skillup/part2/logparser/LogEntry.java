@@ -1,6 +1,7 @@
 package ua.skillup.part2.logparser;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class LogEntry {
@@ -41,7 +42,8 @@ public class LogEntry {
 
     @Override
     public String toString() {
-        return String.format("[%s] [%s] [%s %s] %s", dateTime.toString(), level, clientName, clientIp, message);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss");
+        return String.format("[%s] [%s] [%s %s] %s", dateTime.format(formatter), level, clientName, clientIp, message);
     }
 
     @Override
