@@ -18,7 +18,7 @@ public class StringValidator {
     }
 
     public static boolean isValidPassword(String str) {
-        return false;
+        return str.matches ("^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[~!@#$%^&*()_+\\-=<>?`:;,./|])(?=.\\S+$).{8,}$");
     }
 
     public static boolean isValidHTMLLink(String str) {
