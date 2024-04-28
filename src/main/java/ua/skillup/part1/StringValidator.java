@@ -22,6 +22,6 @@ public class StringValidator {
     }
 
     public static boolean isValidHTMLLink(String str) {
-        return false;
+        return str.matches("<a href=\"(http://www\\..+|https://www\\..+|www\\..+|http://.+|https://.+|ftp://.+|mailto:.+|#\\w*|/\\w*)\">.*</a>");
     }
 }

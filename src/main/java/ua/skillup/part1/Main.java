@@ -7,8 +7,9 @@ public class Main {
         System.out.println(("Checking Ukrainian Phone Number +38(097) 353 83 33 - ") + StringValidator.isValidUkrainianPhoneNumber("+38(097) 353 83 33"));
         System.out.println(("Checking if IPv4 is valid 169.254.0.0/16 - ") + StringValidator.isValidIPv4("169.254.0.0/16"));
 
-         System.out.println(("Checking if string is a valid password 5Tt$562! - ") + StringValidator.isValidPassword("5Tt$562!"));
+        System.out.println(("Checking if string is a valid password 5Tt$562! - ") + StringValidator.isValidPassword("5Tt$562!"));
         System.out.println(("Checking if string is a valid password 5Tt56225 - ") + StringValidator.isValidPassword("5Tt56225"));
-    }
 
+        System.out.println(("Checking if string is a valid HTML-element https://www.w3schools.com/ - ") + StringValidator.isValidHTMLLink("https://www.w3schools.com/"));
+    }
 }
