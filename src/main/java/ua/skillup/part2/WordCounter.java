@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class WordCounter {
     public static int countWords(String text) {
         int count = 0;
-        Pattern pattern = Pattern.compile("\\w*\\S");
+        Pattern pattern = Pattern.compile("[a-zA-Z0-9]+");
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
             count++;
