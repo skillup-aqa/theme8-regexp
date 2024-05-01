@@ -28,7 +28,7 @@ public class StringValidator {
     }
 
     public static boolean isValidHTMLLink(String str) {
-        //actual regular expression is <a\shref=("(http:)|")(https)?(mailto)?(#)?(:)?((\/\/)|(\/))?"?+.*<\/a>
-        return str.matches("<a\\shref=(\"(http:)|\")(https)?(mailto)?(#)?(:)?((//)|(/))?\"?+.*</a>");
+        //actual regular expression is <a\shref="((http:\/\/)|(https:\/\/)|(mailto:\/\/)|#|\/).*">.*<\/a>
+        return str.matches("<a\\shref=\"((http:\\/\\/)|(https:\\/\\/)|(mailto:\\/\\/)|#|\\/).*\">.*<\\/a>");
     }
 }
